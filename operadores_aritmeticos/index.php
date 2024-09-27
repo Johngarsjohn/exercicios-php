@@ -70,16 +70,21 @@
 					<label for="num2">Número 2:</label>
 					<input type="number" name="num2" id="num2" required>
 				</div>
-				<br><br>
 
-				<select name="operacao">
-					<option disabled>Escolha uma operação</option>
-					<option id="soma">Adição</option>
-					<option id="subtr">Subtração</option>
-					<option id="mult">Multiplicação</option>
-					<option id="divsao">Divisão</option>
+				<div>
+					<label for="operacao">Operação:</label>
+					<select name="operacao" required>
+					<option disabled selected value="">Escolha uma operação</option>
+					<option value="Adição">Adição</option>
+					<option value="Subtração">Subtração</option>
+					<option value="Multiplicação">Multiplicação</option>
+					<option value="Divisão">Divisão</option>
 				</select>
-				<input type="submit" name="enviar" value="Calcular">
+				</div>
+
+				<div>
+					<input type="submit" name="enviar" value="Calcular">
+				</div>
 			</form>
 			<span>Resultado: <?php echo $resultado; ?></span>
 		</main>
