@@ -1,22 +1,43 @@
 <?php
 	
+	$resultado = "";
 	if(isset($_POST['enviar'])){
+
+		//Recuperação dos valores vindo do formulário
 		
 		$num1 = $_POST['num1'];
 		$num2 = $_POST['num2'];
-
 		$operacao = $_POST['operacao'];
-		echo "o primeiro número é: $num1 o segundo número é: $num2";
-		echo"<br> A operação é: ".$operacao."<br>";
 
-		if($operacao == 'Adição')
-			echo($num1 + $num2);
-		elseif($operacao == 'Multiplicação')
-			echo($num1 * $num2);
-		elseif($operacao == 'Subtração')
-			echo($num1 - $num2);
-		elseif($operacao == 'Divisão')
-			echo($num1 / $num2);
+		//valida se os números são válidos
+		if(!is_numeric($num1) || !is_numeric($num2)){
+			$resultado = "Por favor, insira números válidos.";
+		}else{
+			//efectua as operações caso se cumpra
+			switch ($operacao) {
+				case 'Adição':
+					$resultado = $num1 + $num2;
+					break;
+				case 'Subtração':
+					$resultado = $num1 - $num2;
+					break;
+				case 'Multiplicação':
+					$resultado = $num1 * $num2;
+					break;
+				case 'Divisão':
+					if($num2 == 0){
+						$resultado = "Erro: divisão por zero!";
+					}else{
+						$resultado = $num1 / $num2;
+					}
+					break;
+				default:
+					$resultado = "Por favor, selecione uma operação.";
+					break;
+			}
+
+		}
+		
 	}
 ?>
 
@@ -60,8 +81,7 @@
 				</select>
 				<input type="submit" name="enviar" value="Calcular">
 			</form>
-			<span>Resultado:</span>
-			<?php echo "<span>".$num1." + ".$num2." = ".($num1 + $num2)."</span>";?>
+			<span>Resultado: <?php echo $resultado; ?></span>
 		</main>
 		<br><br>
 		<footer>&copy;2024 | Todos os Direitos Reservados</footer>
