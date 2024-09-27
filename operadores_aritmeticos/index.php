@@ -51,6 +51,59 @@
 	<meta name="keywords" content="adição, subtração,multiplicação,divisão">
 	<title>Operações aritméticas</title>
 
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+			margin: 0;
+			padding: 0;
+		}
+		#container {
+			max-width: 600px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		}
+		header {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		form div {
+			margin-bottom: 10px;
+		}
+		input[type="number"], select {
+			width: 100%;
+			padding: 8px;
+			margin: 5px 0;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			width: 100%;
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #0056b3;
+		}
+		span {
+			display: block;
+			margin-top: 20px;
+			font-size: 1.2em;
+			color: #333;
+			text-align: center;
+		}
+		footer {
+			text-align: center;
+			margin-top: 20px;
+			font-size: 0.9em;
+			color: #777;
+		}
+	</style>
+
 </head>
 <body>
 
@@ -65,12 +118,10 @@
 					<label for="num1">Número 1:</label>
 					<input type="number" name="num1" id="num1" required>
 				</div>
-				<br><br>
 				<div>
 					<label for="num2">Número 2:</label>
 					<input type="number" name="num2" id="num2" required>
 				</div>
-
 				<div>
 					<label for="operacao">Operação:</label>
 					<select name="operacao" required>
@@ -88,7 +139,6 @@
 			</form>
 			<span>Resultado: <?php echo $resultado; ?></span>
 		</main>
-		<br><br>
 		<footer>&copy;2024 | Todos os Direitos Reservados</footer>
 	</div>
 </body>
