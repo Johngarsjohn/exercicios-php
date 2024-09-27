@@ -60,6 +60,7 @@
 				</select>
 				<input type="submit" name="enviar" value="Calcular">
 			</form>
+			<span>Resultado:</span>
 			<?php echo "<span>".$num1." + ".$num2." = ".($num1 + $num2)."</span>";?>
 		</main>
 		<br><br>
