@@ -12,6 +12,9 @@
 <body>
 
 	<div id="container">
+		<header>
+			<h1>Número Par ou Ímpar</h1>
+		</header>
 		<main class="corpo">
 			<form method="post" action="">
 				<div>
