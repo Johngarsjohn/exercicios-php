@@ -1,3 +1,17 @@
+<?php
+
+	if(isset($_POST['enviar'])){
+		$resultado = "";
+		if(isset($_POST['numero'])){
+			$numero = $_POST['numero'];
+			if(is_numeric($numero) && $numero % 2 == 0)
+				$resultado = $numero." é um número par";
+			else
+				$resultado = "o número ".$numero." é ímpar";
+		}
+	} 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,7 +38,7 @@
 				<div>
 					<input type="submit" name="enviar" value="Verificar">
 				</div>
-				<span>Resultado:</span>
+				<span>Resultado:<?php echo $resultado;?></span>
 				
 			</form>
 		</main>
