@@ -7,6 +7,7 @@
 	<meta name="keywords" content="número par, número ímpar">
 	<meta name="author" content="João Garcia João">
 	<title>Número par ou ímpar</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
