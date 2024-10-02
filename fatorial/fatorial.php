@@ -32,10 +32,19 @@
 	</form>
 
 	<?php function fatorial($numero){
-			if($numero == 0)
-				return 1;
-			else
-		return $numero * fatorial($numero - 1);
+			 // Converte a entrada para um número inteiro, por ser uma string
+
+    		$numero = (int)$numero;
+    		
+			if($numero < 0){
+				return "Fatorial não é definido para números negativo.";
+			}
+			if($numero === 0){
+				return 1; //fatorial de 0 é 1
+			}
+			else{
+				return $numero * fatorial($numero - 1);//chamada recursiva
+			}	
 	}
 	if(isset($_POST['enviar'])){
 
