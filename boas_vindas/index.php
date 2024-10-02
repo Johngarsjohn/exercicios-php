@@ -30,10 +30,14 @@
 		</div>
 		<input type="submit" name="enviar" value="Enviar">
 	</form>
-	<?php if(isset($_POST['enviar'])){
+	<?php function saudacao($nome){
+		return "Olá $nome Seja Bem-Vindo";
+	}
+	if(isset($_POST['enviar'])){
 
 		$nome = $_POST['nome'];
-		echo "<span>Olá $nome Seja Bem-Vindo</span>";
+		$f = saudacao($nome);
+		echo "<span>$f</span>";
 
 	}?>
 
