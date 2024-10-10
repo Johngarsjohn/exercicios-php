@@ -34,9 +34,10 @@
 				if(!is_numeric($peso) || !is_numeric($altura) || $peso <= 0 || $altura <= 0){
 					return "Peso e altura devem ser números positivos.";
 				}
-				$categoria = '';
 
 				$imc = $peso / ($altura * $altura);
+				$imc_formatado = number_format($imc,2);
+				$categoria = '';
 
 				if($imc < 18.5){
 					$categoria = "Abaixo do peso";
@@ -47,17 +48,17 @@
 				}elseif($imc >= 30 && $imc <=34.9){
 					$categoria = "Obesidade grau 1";
 				}elseif ($imc >= 35 && $imc <= 39.9) {
-					$categoria = "Obesidade grau 2(severa)";
-				}elseif($imc >= 40){
-					$categoria = "Obesidade grau 3(mórbida)";
+					$categoria = "Obesidade grau 2 (severa)";
+				}else{
+					$categoria = "Obesidade grau 3 (mórbida)";
 				}
-				return $categoria;
+				return "IMC: $imc_formatado - Categoria: $categoria";
 			} 
 
 			if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				$peso = $_POST['peso'];
 				$altura = $_POST['altura'];
-				echo "<span>Categoria: ".calcularImc($peso,$altura) ." </span>";
+				echo "<span>".calcularImc($peso,$altura) ." </span>";
 			}	
 		?>
 	</main>
