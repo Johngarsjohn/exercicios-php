@@ -7,6 +7,7 @@
 	<meta name="keywords" content="imc, massa corporal,peso">
 	<meta name="author" content="João Garcia João">
 	<title>calculadora de imc</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
