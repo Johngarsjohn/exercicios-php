@@ -30,6 +30,10 @@
 		<br><br>
 		<?php
 			function calcularImc($peso,$altura){
+
+				if(!is_numeric($peso) || !is_numeric($altura) || $peso <= 0 || $altura <= 0){
+					return "Peso e altura devem ser números positivos.";
+				}
 				$categoria = '';
 
 				$imc = $peso / ($altura * $altura);
